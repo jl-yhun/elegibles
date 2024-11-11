@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('posiciones_aspirantes', function (Blueprint $table) { // 'positions_aspire' -> 'posiciones_aspirantes'
             $table->id();
-            $table->unsignedBigInteger('user_id'); // 'user_id' -> 'user_id'
-            $table->foreign('user_id')->references('id')->on('usuarios');
+            $table->unsignedBigInteger('usuario_id'); // 'user_id' -> 'user_id'
+            $table->foreign('usuario_id')->references('id')->on('users');
             $table->string('nombre', 20); // 'name' -> 'nombre'
             $table->timestamps();
         });

@@ -9,12 +9,12 @@ use Illuminate\Support\Str;
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\User>
  */
-class UsuarioFactory extends Factory
+class UserFactory extends Factory
 {
     /**
      * La contraseña actual que está siendo utilizada por la fábrica.
      */
-    protected static ?string $contrasena;
+    protected static ?string $password;
 
     /**
      * Define el estado predeterminado del modelo.
@@ -27,7 +27,7 @@ class UsuarioFactory extends Factory
             'nombre' => fake()->name(), // 'name' -> 'nombre'
             'email' => fake()->unique()->safeEmail(), // 'email' -> 'email'
             'email_verified_at' => now(), // 'email_verified_at' -> 'email_verified_at'
-            'password' => static::$contrasena ??= Hash::make('password'), // 'password' -> 'contrasenia'
+            'password' => static::$password ??= Hash::make('password'), // 'password' -> 'contrasenia'
             'remember_token' => Str::random(10), // 'remember_token' -> 'token_recordatorio'
         ];
     }

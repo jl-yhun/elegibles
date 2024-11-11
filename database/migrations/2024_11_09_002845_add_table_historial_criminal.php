@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('historial_criminal', function (Blueprint $table) { // 'criminal_history' -> 'historial_criminal'
             $table->id();
-            $table->unsignedBigInteger('user_id'); // 'user_id' -> 'user_id'
-            $table->foreign('user_id')->references('id')->on('usuarios')->onDelete('cascade');
+            $table->unsignedBigInteger('usuario_id'); // 'user_id' -> 'user_id'
+            $table->foreign('usuario_id')->references('id')->on('users')->onDelete('cascade');
             $table->boolean('antecedentes_penales')->default(false); // 'criminal_record' -> 'antecedentes_penales'
             $table->string('detalles_antecedentes_penales', 254)->nullable(); // 'criminal_record_details' -> 'detalles_antecedentes_penales'
             $table->boolean('inhabilitacion')->default(false); // 'has_been_disabled' -> 'ha_sido_inhabilitado'

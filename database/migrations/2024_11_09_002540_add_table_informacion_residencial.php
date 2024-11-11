@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('informacion_residencial', function (Blueprint $table) { // 'residential_info' -> 'informacion_residencial'
             $table->id();
-            $table->unsignedBigInteger('user_id'); // 'user_id' -> 'user_id'
-            $table->foreign('user_id')->references('id')->on('usuarios')->onDelete('cascade');
+            $table->unsignedBigInteger('usuario_id'); // 'user_id' -> 'user_id'
+            $table->foreign('usuario_id')->references('id')->on('users')->onDelete('cascade');
             $table->string('nacionalidades', 254)->nullable(); // 'nationalities' -> 'nacionalidades'
             $table->boolean('residencia_ultimo_anio')->default(true); // 'residence_last_year' -> 'residencia_ultimo_ano'
             $table->date('fuera_mexico_desde')->nullable(); // 'outside_of_mexico_from' -> 'fuera_mexico_desde'

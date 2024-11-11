@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('informacion_academica', function (Blueprint $table) { // 'academic_info' -> 'informacion_academica'
             $table->id();
-            $table->unsignedBigInteger('user_id'); // 'user_id' -> 'user_id'
-            $table->foreign('user_id')->references('id')->on('usuarios')->onDelete('cascade');
+            $table->unsignedBigInteger('usuario_id'); // 'user_id' -> 'user_id'
+            $table->foreign('usuario_id')->references('id')->on('users')->onDelete('cascade');
             $table->boolean('titulo_derecho')->default(false); // 'tittle_law' -> 'titulo_derecho'
             $table->string('promedio', 5); // 'average' -> 'promedio'
             $table->string('nombre_escuela', 100); // 'name_school' -> 'nombre_escuela'

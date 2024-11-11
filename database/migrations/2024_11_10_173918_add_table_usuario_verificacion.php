@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::table('usuarios', function (Blueprint $table) { // 'users' -> 'usuarios'
+        Schema::table('users', function (Blueprint $table) { // 'users' -> 'usuarios'
             $table->string('verification_code')->nullable(); // Mantener en inglés para autenticación
         });
     }
@@ -21,7 +21,7 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::table('usuarios', function (Blueprint $table) { // 'users' -> 'usuarios'
+        Schema::table('users', function (Blueprint $table) { // 'users' -> 'usuarios'
             $table->dropColumn('verification_code'); // Mantener en inglés para autenticación
         });
     }

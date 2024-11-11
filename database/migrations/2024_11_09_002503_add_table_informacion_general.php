@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('informacion_general', function (Blueprint $table) { // 'general_info' -> 'informacion_general'
             $table->id();
-            $table->unsignedBigInteger('user_id'); // 'user_id' -> 'user_id'
-            $table->foreign('user_id')->references('id')->on('usuarios')->onDelete('cascade');
+            $table->unsignedBigInteger('usuario_id'); // 'user_id' -> 'user_id'
+            $table->foreign('usuario_id')->references('id')->on('users')->onDelete('cascade');
             $table->string('nombre', 100); // 'name' -> 'nombre'
             $table->string('apellido_paterno', 100); // 'father_last_name' -> 'apellido_paterno'
             $table->string('apellido_materno', 100); // 'mother_last_name' -> 'apellido_materno'

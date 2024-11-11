@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('sentencia_usuario', function (Blueprint $table) { // 'sentence_user' -> 'sentencia_usuario'
             $table->id();
-            $table->unsignedBigInteger('user_id'); // 'user_id' -> 'user_id'
-            $table->foreign('user_id')->references('id')->on('usuarios')->onDelete('cascade');
+            $table->unsignedBigInteger('usuario_id'); // 'user_id' -> 'user_id'
+            $table->foreign('usuario_id')->references('id')->on('users')->onDelete('cascade');
             $table->string('sentencia'); // 'sentence' -> 'sentencia'
             $table->timestamps();
         });
