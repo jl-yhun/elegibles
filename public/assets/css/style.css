@@ -1,0 +1,310 @@
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(150deg, #ff388b, #7100ad, #4d0175);
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+.input-error {
+    background-color: #ffd7e7; 
+    border-bottom: 2px solid #ff388b;
+}
+
+.form-container {
+    background-color: #ffffff;
+    color: #000000;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    height: auto;
+}
+
+.wizard-container {
+    padding: 20px;
+    border-radius: 15px;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 10px;
+    background-color: #6e006f;
+    border-radius: 5px;
+    overflow: hidden;
+    margin-bottom: 15px;
+}
+
+.progress {
+    height: 100%;
+    background-color: #d1c4e9;
+    width: 20%;
+    transition: width 0.3s;
+}
+
+.progress-text {
+    margin-bottom: 15px;
+    text-align: center;
+    font-size: 14px;
+}
+
+.wizard-steps {
+    list-style: none;
+    padding: 0;
+}
+
+.wizard-steps li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.wizard-steps li .step-circle {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background-color: #e0b2f3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 15px;
+    transition: background-color 0.3s;
+}
+
+.wizard-steps li.completed .step-circle {
+    background-color: #ff4081;
+}
+
+.wizard-steps li.active .step-circle {
+    background-color: #ff4081;
+}
+
+.wizard-steps li .step-text {
+    font-size: 16px;
+}
+
+.wizard-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.wizard-buttons button {
+    background-color: #ff4081;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.wizard-buttons button:hover {
+    background-color: #e91e63;
+}
+
+.form-section {
+    display: none;
+}
+
+.form-section.active {
+    display: block;
+}
+
+.logo-container {
+    text-align: center;
+    /* Centrar el logo */
+    margin-bottom: 20px;
+    /* Espacio entre el logo y la barra de progreso */
+}
+
+.btn-pink{
+    background-color: #e6007e; color: #fff; border-radius: 10px;
+}
+.wizard-logo {
+    max-width: 300px;
+    height: auto;
+    margin-top: -35%
+}
+
+.option-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #d7a3d4;
+    padding-bottom: 15px;
+}
+
+.option-icon {
+    width: 50px;
+    /* Ajusta según el tamaño deseado */
+    height: auto;
+    margin-right: 15px;
+    /* Espacio entre el icono y el texto */
+}
+
+.option-content {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.option-content h4 {
+    font-weight: bold;
+    margin: 0;
+    padding: 0;
+}
+
+.sub-options {
+    display: flex;
+    flex-wrap: wrap;
+    /* Para que los elementos fluyan en la misma fila */
+    gap: 15px;
+    /* Espacio entre las opciones */
+    margin-top: 10px;
+}
+
+.sub-options label {
+    display: flex;
+    align-items: center;
+}
+
+.text-primary {
+    color: #c300ca !important;
+}
+
+hr {
+    margin: 0rem 0;
+    background-color: #ff4081;
+    border: 1px solid #ff4081;
+    opacity: 1;
+}
+
+.text-xs {
+    font-size: 12px
+}
+/* Container styles */
+#result-container {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.result-card-logo {
+    max-width: 150px;
+    margin-bottom: 20px;
+}
+
+/* Card styles */
+.result-card {
+    padding: 40px;
+    width: 500px;
+    border-radius: 20px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Icon section styles */
+.icon-section {
+    min-width: 100px;
+}
+
+.icon-wrapper {
+    position: relative;
+    display: inline-block;
+}
+
+.icon-background {
+    font-size: 1.8rem;
+    background-color: #7100ad;
+    padding: 10px;
+    border-radius: 20%;
+    color: white;
+}
+
+.icon-check {
+    font-size: 1rem;
+    color: #28a745;
+    position: absolute;
+    top: -10px;
+    right: -10px;
+}
+
+.icon-text {
+    margin-top: 10px;
+    font-weight: bold;
+    font-size: 0.875rem;
+    color: #7100ad;
+}
+
+/* Result message styles */
+.result-message-container {
+    position: relative;
+    overflow: hidden;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    background: linear-gradient(135deg, #e967cb, #7100ad);
+}
+
+.result-message-text {
+    color: white;
+    z-index: 2;
+    position: relative;
+}
+
+.result-instructions {
+    color: #6c757d;
+    margin-bottom: 20px;
+}
+
+.result-button {
+    background-color: #e6007e;
+    color: white;
+    border-radius: 50px;
+    padding: 10px 20px;
+}
+
+/* Modal styles */
+.modal-style {
+    background-color: rgba(113, 0, 173, 0.9);
+    border-radius: 20px;
+}
+
+.modal-body-style {
+    position: relative;
+    border: 2px solid #ffffff;
+    border-radius: 20px;
+    padding: 40px;
+}
+
+.modal-icon {
+    font-size: 3rem;
+    position: absolute;
+    top: -40px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #7100ad;
+    padding: 20px;
+    border-radius: 50%;
+    color: white;
+}
+
+.modal-text {
+    font-size: 1.2rem;
+    margin-top: 60px;
+    margin-bottom: 30px;
+}
+
+.modal-button {
+    border-radius: 50px;
+    padding: 10px 20px;
+    font-size: 1.1rem;
+    color: white;
+    border: 2px solid white;
+}
+
+.imagen{
+    background-color: rgba(128, 0, 128, 0.5); top: 0; left: 0;
+}
