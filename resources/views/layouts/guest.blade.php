@@ -10,7 +10,6 @@
         <style>
             body {
                 font-family: Arial, sans-serif;
-                color: #ffffff;
                 display: flex;
                 justify-content: center;
                 align-items: center;
