@@ -113,14 +113,15 @@
                             <div class="col-md-12 row">
                                 <div class="mb-3 col-md-6">
                                     <label for="name" class="form-label">Nombre (s):</label>
-                                    <input name="name" type="text" class="form-control" id="name" value="{{ Auth::user()->name }}"
-                                        placeholder="">
+                                    <input name="name" type="text" class="form-control" id="name"
+                                        value="{{ Auth::user()->name }}" placeholder="">
                                 </div>
                                 <!-- Apellido paterno -->
                                 <div class="mb-3 col-md-6">
                                     <label for="father_last_name" class="form-label">Apellido paterno:</label>
-                                    <input name="father_last_name" type="text" class="form-control" value="{{ Auth::user()->apellido_paterno }}"
-                                        id="father_last_name" placeholder="">
+                                    <input name="father_last_name" type="text" class="form-control"
+                                        value="{{ Auth::user()->apellido_paterno }}" id="father_last_name"
+                                        placeholder="">
                                 </div>
                             </div>
 
@@ -128,14 +129,15 @@
                                 <!-- Apellido materno -->
                                 <div class="mb-3 col-md-6">
                                     <label for="mother_last_name" class="form-label">Apellido materno:</label>
-                                    <input name="mother_last_name" type="text" class="form-control" value="{{ Auth::user()->apellido_materno }}"
-                                        id="mother_last_name" placeholder="">
+                                    <input name="mother_last_name" type="text" class="form-control"
+                                        value="{{ Auth::user()->apellido_materno }}" id="mother_last_name"
+                                        placeholder="">
                                 </div>
                                 <!-- Género -->
                                 <div class="mb-3 col-md-6">
                                     <label for="curp" class="form-label">CURP:</label>
-                                    <input name="curp" type="text"  style="text-transform: uppercase;"
-                                           class="form-control" id="curp" placeholder="" pattern="[A-Za-z0-9\s]*">
+                                    <input name="curp" type="text" style="text-transform: uppercase;"
+                                        class="form-control" id="curp" placeholder="" pattern="[A-Za-z0-9\s]*">
                                 </div>
                             </div>
                             <div class="row mb-3">
@@ -143,14 +145,14 @@
                                 <div class="mb-3 col-md-6">
                                     <label for="genre" class="form-label">Género:</label>
                                     <input name="genre" type="text" readonly class="form-control"
-                                           id="genre" placeholder="">
+                                        id="genre" placeholder="">
                                 </div>
 
                                 <!-- RFC -->
                                 <div class="mb-3 col-md-6">
                                     <label for="rfc" class="form-label">RFC (con homoclave):</label>
-                                    <input name="rfc"  style="text-transform:  uppercase;" type="text" class="form-control" id="rfc"
-                                        placeholder="" pattern="[A-Za-z0-9\s]*">
+                                    <input name="rfc" style="text-transform:  uppercase;" type="text"
+                                        class="form-control" id="rfc" placeholder="" pattern="[A-Za-z0-9\s]*">
                                 </div>
                             </div>
 
@@ -592,139 +594,171 @@
                             <!-- Pregunta: ¿Has sido sentenciada por algunos de los siguientes supuestos de violencia de género? -->
                             <div class="row mb-4">
                                 <div class="col-md-12">
-                                    <label class="text-primary text-xs fw-bold">¿Has sido sentenciado por algunos de
-                                        los
-                                        siguientes supuestos de violencia de género? (selecciona)</label>
-                                    <div class="row mt-3">
-                                        <!-- Opción 1 -->
-                                        <div class="col-md-4 mb-2">
-                                            <div class="card text-center position-relative"
-                                                style="height: 110px; width: 100%; background-image: url('{{ asset('assets/img/integridad.png') }}'); background-size: cover; background-position: center;">
-                                                <div class="overlay position-absolute w-100 h-100 imagen">
-                                                </div>
-                                                <div class="card-body text-white d-flex flex-column align-items-center justify-content-center p-1"
-                                                    style="height: 100%; position: relative; z-index: 1;">
-                                                    <p class="card-title text-center mb-1" style="font-size: 0.8rem;">
-                                                        Delitos contra la vida y la integridad corporal</p>
-                                                    <input class="form-check-input align-self-end" type="checkbox"
-                                                        name="sentence_user[]" value="delitos_integridad_corporal"
-                                                        style="position: absolute; bottom: 5px; right: 5px;">
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!-- Opción 2 -->
-                                        <div class="col-md-4 mb-2">
-                                            <div class="card text-center position-relative"
-                                                style="height: 110px; width: 100%; background-image: url('{{ asset('assets/img/sexual.png') }}'); background-size: cover; background-position: center;">
-                                                <div class="overlay position-absolute w-100 h-100 imagen">
-                                                </div>
-                                                <div class="card-body text-white d-flex flex-column align-items-center justify-content-center p-1"
-                                                    style="height: 100%; position: relative; z-index: 1;">
-                                                    <p class="card-title text-center mb-1" style="font-size: 0.8rem;">
-                                                        Contra la libertad y seguridad sexual</p>
-                                                    <input class="form-check-input align-self-end" type="checkbox"
-                                                        name="sentence_user[]" value="seguridad_sexual"
-                                                        style="position: absolute; bottom: 5px; right: 5px;">
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!-- Opción 3 -->
-                                        <div class="col-md-4 mb-2">
-                                            <div class="card text-center position-relative"
-                                                style="height: 110px; width: 100%; background-image: url('{{ asset('assets/img/psicosexual.png') }}'); background-size: cover; background-position: center;">
-                                                <div class="overlay position-absolute w-100 h-100 imagen">
-                                                </div>
-                                                <div class="card-body text-white d-flex flex-column align-items-center justify-content-center p-1"
-                                                    style="height: 100%; position: relative; z-index: 1;">
-                                                    <p class="card-title text-center mb-1" style="font-size: 0.8rem;">
-                                                        Cuando afecte el normal desarrollo psicosocial</p>
-                                                    <input class="form-check-input align-self-end" type="checkbox"
-                                                        name="sentence_user[]" value="desarrollo_psicosocial"
-                                                        style="position: absolute; bottom: 5px; right: 5px;">
+                                   
+
+                                    <!-- Pregunta: ¿Cuenta con sentencia firme en alguno de los supuestos anteriores? -->
+                                    <div class="row mb-3 align-items-center">
+                                        <div class="col-md-12">
+                                            <label class="form-label">¿Cuenta con sentencia por algun delito?</label>
+                                            <div class="row">
+                                                <div class="col-md-2">
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="radio"
+                                                            id="sentenciaSi" name="final_sentence"
+                                                            onclick="show('sentence')" value="1">
+                                                        <label class="form-check-label" for="sentenciaSi">Sí</label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" onclick="hide('sentence')"
+                                                            type="radio" id="sentenciaNo" name="final_sentence"
+                                                            value="0">
+                                                        <label class="form-check-label" for="sentenciaNo">No</label>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="row mt-3">
-                                        <!-- Opción 4 -->
-                                        <div class="col-md-4 mb-2">
-                                            <div class="card text-center position-relative"
-                                                style="height: 110px; width: 100%; background-image: url('{{ asset('assets/img/familiar.png') }}'); background-size: cover; background-position: center;">
-                                                <div class="overlay position-absolute w-100 h-100 imagen">
+                                    <div id="sentence" style="display: none">
+                                        <label class="text-primary text-xs">En caso de que la respuesta sea afirmativa, seleccione si ha sido seleccionado por alguno de los siguientes delitos:</label>
+                                        <div class="row mt-3 ">
+                                            <!-- Opción 1 -->
+                                            <div class="col-md-4 mb-2">
+                                                <div class="card text-center position-relative"
+                                                    style="height: 110px; width: 100%; background-image: url('{{ asset('assets/img/integridad.png') }}'); background-size: cover; background-position: center;">
+                                                    <div class="overlay position-absolute w-100 h-100 imagen">
+                                                    </div>
+                                                    <div class="card-body text-white d-flex flex-column align-items-center justify-content-center p-1"
+                                                        style="height: 100%; position: relative; z-index: 1;">
+                                                        <p class="card-title text-center mb-1"
+                                                            style="font-size: 0.8rem;">
+                                                            Delitos contra la vida y la integridad corporal</p>
+                                                        <input class="form-check-input align-self-end" type="checkbox"
+                                                            name="sentence_user[]" value="delitos_integridad_corporal"
+                                                            style="position: absolute; bottom: 5px; right: 5px;">
+                                                    </div>
                                                 </div>
-                                                <div class="card-body text-white d-flex flex-column align-items-center justify-content-center p-1"
-                                                    style="height: 100%; position: relative; z-index: 1;">
-                                                    <p class="card-title text-center mb-1" style="font-size: 0.8rem;">
-                                                        Violencia familiar</p>
-                                                    <input class="form-check-input align-self-end" type="checkbox"
-                                                        name="sentence_user[]" value="violencia_familiar"
-                                                        style="position: absolute; bottom: 5px; right: 5px;">
+                                            </div>
+                                            <!-- Opción 2 -->
+                                            <div class="col-md-4 mb-2">
+                                                <div class="card text-center position-relative"
+                                                    style="height: 110px; width: 100%; background-image: url('{{ asset('assets/img/sexual.png') }}'); background-size: cover; background-position: center;">
+                                                    <div class="overlay position-absolute w-100 h-100 imagen">
+                                                    </div>
+                                                    <div class="card-body text-white d-flex flex-column align-items-center justify-content-center p-1"
+                                                        style="height: 100%; position: relative; z-index: 1;">
+                                                        <p class="card-title text-center mb-1"
+                                                            style="font-size: 0.8rem;">
+                                                            Contra la libertad y seguridad sexual</p>
+                                                        <input class="form-check-input align-self-end" type="checkbox"
+                                                            name="sentence_user[]" value="seguridad_sexual"
+                                                            style="position: absolute; bottom: 5px; right: 5px;">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- Opción 3 -->
+                                            <div class="col-md-4 mb-2">
+                                                <div class="card text-center position-relative"
+                                                    style="height: 110px; width: 100%; background-image: url('{{ asset('assets/img/psicosexual.png') }}'); background-size: cover; background-position: center;">
+                                                    <div class="overlay position-absolute w-100 h-100 imagen">
+                                                    </div>
+                                                    <div class="card-body text-white d-flex flex-column align-items-center justify-content-center p-1"
+                                                        style="height: 100%; position: relative; z-index: 1;">
+                                                        <p class="card-title text-center mb-1"
+                                                            style="font-size: 0.8rem;">
+                                                            Cuando afecte el normal desarrollo psicosocial</p>
+                                                        <input class="form-check-input align-self-end" type="checkbox"
+                                                            name="sentence_user[]" value="desarrollo_psicosocial"
+                                                            style="position: absolute; bottom: 5px; right: 5px;">
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
-                                        <!-- Opción 5 -->
-                                        <div class="col-md-4 mb-2">
-                                            <div class="card text-center position-relative"
-                                                style="height: 110px; width: 100%; background-image: url('{{ asset('assets/img/domestica.png') }}'); background-size: cover; background-position: center;">
-                                                <div class="overlay position-absolute w-100 h-100 imagen">
+                                        <div class="row mt-3 ">
+                                            <!-- Opción 4 -->
+                                            <div class="col-md-4 mb-2">
+                                                <div class="card text-center position-relative"
+                                                    style="height: 110px; width: 100%; background-image: url('{{ asset('assets/img/familiar.png') }}'); background-size: cover; background-position: center;">
+                                                    <div class="overlay position-absolute w-100 h-100 imagen">
+                                                    </div>
+                                                    <div class="card-body text-white d-flex flex-column align-items-center justify-content-center p-1"
+                                                        style="height: 100%; position: relative; z-index: 1;">
+                                                        <p class="card-title text-center mb-1"
+                                                            style="font-size: 0.8rem;">
+                                                            Violencia familiar</p>
+                                                        <input class="form-check-input align-self-end" type="checkbox"
+                                                            name="sentence_user[]" value="violencia_familiar"
+                                                            style="position: absolute; bottom: 5px; right: 5px;">
+                                                    </div>
                                                 </div>
-                                                <div class="card-body text-white d-flex flex-column align-items-center justify-content-center p-1"
-                                                    style="height: 100%; position: relative; z-index: 1;">
-                                                    <p class="card-title text-center mb-1" style="font-size: 0.8rem;">
-                                                        Violencia doméstica</p>
-                                                    <input class="form-check-input align-self-end" type="checkbox"
-                                                        name="sentence_user[]" value="violencia_domestica"
-                                                        style="position: absolute; bottom: 5px; right: 5px;">
+                                            </div>
+                                            <!-- Opción 5 -->
+                                            <div class="col-md-4 mb-2">
+                                                <div class="card text-center position-relative"
+                                                    style="height: 110px; width: 100%; background-image: url('{{ asset('assets/img/domestica.png') }}'); background-size: cover; background-position: center;">
+                                                    <div class="overlay position-absolute w-100 h-100 imagen">
+                                                    </div>
+                                                    <div class="card-body text-white d-flex flex-column align-items-center justify-content-center p-1"
+                                                        style="height: 100%; position: relative; z-index: 1;">
+                                                        <p class="card-title text-center mb-1"
+                                                            style="font-size: 0.8rem;">
+                                                            Violencia doméstica</p>
+                                                        <input class="form-check-input align-self-end" type="checkbox"
+                                                            name="sentence_user[]" value="violencia_domestica"
+                                                            style="position: absolute; bottom: 5px; right: 5px;">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- Opción 6 -->
+                                            <div class="col-md-4 mb-2">
+                                                <div class="card text-center position-relative"
+                                                    style="height: 110px; width: 100%; background-image: url('{{ asset('assets/img/intimidad.png') }}'); background-size: cover; background-position: center;">
+                                                    <div class="overlay position-absolute w-100 h-100 imagen">
+                                                    </div>
+                                                    <div class="card-body text-white d-flex flex-column align-items-center justify-content-center p-1"
+                                                        style="height: 100%; position: relative; z-index: 1;">
+                                                        <p class="card-title text-center mb-1"
+                                                            style="font-size: 0.8rem;">
+                                                            Violación a la intimidad sexual</p>
+                                                        <input class="form-check-input align-self-end" type="checkbox"
+                                                            name="sentence_user[]" value="intimidad_sexual"
+                                                            style="position: absolute; bottom: 5px; right: 5px;">
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
-                                        <!-- Opción 6 -->
-                                        <div class="col-md-4 mb-2">
-                                            <div class="card text-center position-relative"
-                                                style="height: 110px; width: 100%; background-image: url('{{ asset('assets/img/intimidad.png') }}'); background-size: cover; background-position: center;">
-                                                <div class="overlay position-absolute w-100 h-100 imagen">
-                                                </div>
-                                                <div class="card-body text-white d-flex flex-column align-items-center justify-content-center p-1"
-                                                    style="height: 100%; position: relative; z-index: 1;">
-                                                    <p class="card-title text-center mb-1" style="font-size: 0.8rem;">
-                                                        Violación a la intimidad sexual</p>
-                                                    <input class="form-check-input align-self-end" type="checkbox"
-                                                        name="sentence_user[]" value="intimidad_sexual"
-                                                        style="position: absolute; bottom: 5px; right: 5px;">
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row mt-3">
-                                        <!-- Opción 7 -->
-                                        <div class="col-md-4 mb-2">
-                                            <div class="card text-center position-relative"
-                                                style="height: 110px; width: 100%; background-image: url('{{ asset('assets/img/politica.png') }}'); background-size: cover; background-position: center;">
-                                                <div class="overlay position-absolute w-100 h-100 imagen">
-                                                </div>
-                                                <div class="card-body text-white d-flex flex-column align-items-center justify-content-center p-1"
-                                                    style="height: 100%; position: relative; z-index: 1;">
-                                                    <p class="card-title text-center mb-1" style="font-size: 0.8rem;">
-                                                        Violencia política</p>
-                                                    <input class="form-check-input align-self-end" type="checkbox"
-                                                        name="sentence_user[]" value="violencia_politica"
-                                                        style="position: absolute; bottom: 5px; right: 5px;">
+                                        <div class="row mt-3 ">
+                                            <!-- Opción 7 -->
+                                            <div class="col-md-4 mb-2">
+                                                <div class="card text-center position-relative"
+                                                    style="height: 110px; width: 100%; background-image: url('{{ asset('assets/img/politica.png') }}'); background-size: cover; background-position: center;">
+                                                    <div class="overlay position-absolute w-100 h-100 imagen">
+                                                    </div>
+                                                    <div class="card-body text-white d-flex flex-column align-items-center justify-content-center p-1"
+                                                        style="height: 100%; position: relative; z-index: 1;">
+                                                        <p class="card-title text-center mb-1"
+                                                            style="font-size: 0.8rem;">
+                                                            Violencia política</p>
+                                                        <input class="form-check-input align-self-end" type="checkbox"
+                                                            name="sentence_user[]" value="violencia_politica"
+                                                            style="position: absolute; bottom: 5px; right: 5px;">
+                                                    </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                        <!-- Opción 8 -->
-                                        <div class="col-md-4 mb-2">
-                                            <div class="card text-center position-relative"
-                                                style="height: 110px; width: 100%; background-image: url('{{ asset('assets/img/monetario.png') }}'); background-size: cover; background-position: center;">
-                                                <div class="overlay position-absolute w-100 h-100 imagen">
-                                                </div>
-                                                <div class="card-body text-white d-flex flex-column align-items-center justify-content-center p-1"
-                                                    style="height: 100%; position: relative; z-index: 1;">
-                                                    <p class="card-title text-center mb-1" style="font-size: 0.8rem;">
-                                                        Deudor alimentario moroso</p>
-                                                    <input class="form-check-input align-self-end" type="checkbox"
-                                                        name="sentence_user[]" value="deudor_alimentario"
-                                                        style="position: absolute; bottom: 5px; right: 5px;">
+                                            <!-- Opción 8 -->
+                                            <div class="col-md-4 mb-2">
+                                                <div class="card text-center position-relative"
+                                                    style="height: 110px; width: 100%; background-image: url('{{ asset('assets/img/monetario.png') }}'); background-size: cover; background-position: center;">
+                                                    <div class="overlay position-absolute w-100 h-100 imagen">
+                                                    </div>
+                                                    <div class="card-body text-white d-flex flex-column align-items-center justify-content-center p-1"
+                                                        style="height: 100%; position: relative; z-index: 1;">
+                                                        <p class="card-title text-center mb-1"
+                                                            style="font-size: 0.8rem;">
+                                                            Deudor alimentario moroso</p>
+                                                        <input class="form-check-input align-self-end" type="checkbox"
+                                                            name="sentence_user[]" value="deudor_alimentario"
+                                                            style="position: absolute; bottom: 5px; right: 5px;">
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
@@ -732,27 +766,7 @@
                                 </div>
                             </div>
 
-                            <!-- Pregunta: ¿Cuenta con sentencia firme en alguno de los supuestos anteriores? -->
-                            <div class="row mb-3 align-items-center">
-                                <div class="col-md-12">
-                                    <label class="form-label">¿Cuenta con sentencia firme en alguno de los supuestos
-                                        anteriores?</label>
-                                    <div class="row">
-                                        <div class="col-md-2">
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="radio" id="sentenciaSi"
-                                                    name="final_sentence" value="1">
-                                                <label class="form-check-label" for="sentenciaSi">Sí</label>
-                                            </div>
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="radio" id="sentenciaNo"
-                                                    name="final_sentence" value="0">
-                                                <label class="form-check-label" for="sentenciaNo">No</label>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+
                         </div>
 
                     </div>

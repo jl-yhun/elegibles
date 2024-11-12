@@ -7,22 +7,45 @@
 
         <title>{{ config('app.name', 'Laravel') }}</title>
 
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                color: #ffffff;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+                margin: 0;
+                background-color: #f3f4f6;
+            }
+            .custom-card {
+                width: 90%;
+                max-width: 75rem;
+                padding: 2.5rem;
+                border-radius: 1rem;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                background: linear-gradient(to bottom right, #FF4081, #9013FE);
+            }
+            .center-slot {
+                padding: 3% !important;
+                width: 100%;
+                justify-content: center;
+                align-items: center;
+            }
+        </style>
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.bunny.net">
         <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
 
-        <style>
-            body {
-                font-family: Arial, sans-serif;
-                background: linear-gradient(150deg, #ff388b, #7100ad, #4d0175);
-                color: #ffffff;
-            }
-        </style>
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
-    <body class="font-sans text-gray-900 antialiased">
-        <div class="min-h-screen flex flex-col sm:justify-center items-center pt-6 sm:pt-0">
+    <body>
+        <div class="custom-card">
             <div>
                 <a href="">
                     <div class="logo-container">
@@ -31,7 +54,7 @@
                 </a>
             </div>
 
-            <div class="w-full w-100 sm:max-w-md mt-6 px-6 py-4 bg-white shadow-md overflow-hidden sm:rounded-lg">
+            <div class="center-slot w-full sm:max-w-lg mt-6 px-6 py-8 bg-white shadow-md overflow-hidden sm:rounded-lg p-3">
                 {{ $slot }}
             </div>
         </div>

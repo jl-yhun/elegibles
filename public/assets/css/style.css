@@ -308,3 +308,7 @@ hr {
 .imagen{
     background-color: rgba(128, 0, 128, 0.5); top: 0; left: 0;
 }
+
+.sentence{
+    display: none;
+}
