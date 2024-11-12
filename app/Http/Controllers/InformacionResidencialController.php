@@ -2,17 +2,17 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\ResidentialInfo;
+use App\Models\InformacionResidencial;
 use Illuminate\Http\Request;
 
-class ResidentialInfoController extends Controller
+class InformacionResidencialController extends Controller
 {
     /**
      * Muestra una lista del recurso.
      */
     public function index()
     {
-        $residentialInfos = ResidentialInfo::all();
+        $residentialInfos = InformacionResidencial::all();
         return response()->json($residentialInfos);
     }
 
@@ -32,7 +32,7 @@ class ResidentialInfoController extends Controller
             'certificado_residencial' => 'nullable|cadena|max:254',
         ]);
 
-        $residentialInfo = ResidentialInfo::create($validated);
+        $residentialInfo = InformacionResidencial::create($validated);
         return response()->json($residentialInfo, 201);
     }
 
@@ -41,7 +41,7 @@ class ResidentialInfoController extends Controller
      */
     public function show($id)
     {
-        $residentialInfo = ResidentialInfo::findOrFail($id);
+        $residentialInfo = InformacionResidencial::findOrFail($id);
         return response()->json($residentialInfo);
     }
 
@@ -50,7 +50,7 @@ class ResidentialInfoController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $residentialInfo = ResidentialInfo::findOrFail($id);
+        $residentialInfo = InformacionResidencial::findOrFail($id);
 
         $validated = $request->validate([
             'user_id' => 'requerido|exists:users,id',
@@ -72,7 +72,7 @@ class ResidentialInfoController extends Controller
      */
     public function destroy($id)
     {
-        $residentialInfo = ResidentialInfo::findOrFail($id);
+        $residentialInfo = InformacionResidencial::findOrFail($id);
         $residentialInfo->delete();
         return response()->json(['mensaje' => 'Registro eliminado exitosamente']);
     }

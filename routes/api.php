@@ -1,12 +1,12 @@
 <?php
 
-use App\Http\Controllers\AcademicInfoController;
-use App\Http\Controllers\CriminalHistoryController;
-use App\Http\Controllers\GeneralInfoController;
+use App\Http\Controllers\InformacionAcademicaController;
+use App\Http\Controllers\HistorialCriminalController;
+use App\Http\Controllers\InformacionGeneralController;
 use App\Http\Controllers\MasterRegistrationController;
-use App\Http\Controllers\PositionAspireController;
-use App\Http\Controllers\ResidentialInfoController;
-use App\Http\Controllers\SentenceUserController;
+use App\Http\Controllers\PosicionAspiranteController;
+use App\Http\Controllers\InformacionResidencialController;
+use App\Http\Controllers\SentenciaUsuarioController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 

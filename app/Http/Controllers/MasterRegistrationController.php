@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Controllers\ResidentialInfoController;
-use App\Http\Controllers\AcademicInfoController;
-use App\Http\Controllers\CriminalHistoryController;
+use App\Http\Controllers\InformacionResidencialController;
+use App\Http\Controllers\InformacionAcademicaController;
+use App\Http\Controllers\HistorialCriminalController;
 use App\Mail\SendEmail;
 use App\Mail\VerificationCodeMail;
 use App\Models\User;
@@ -76,23 +76,23 @@ class MasterRegistrationController extends Controller
         DB::beginTransaction();
         try {
             // general info
-            $generalInfo = new GeneralInfoController();
+            $generalInfo = new InformacionGeneralController();
             $generalInfo->store(new Request($validated));
 
             // Create a record in ResidentialInfo
-            $residentialInfo = new ResidentialInfoController();
+            $residentialInfo = new InformacionResidencialController();
             $residentialInfo->store(new Request($validated));
 
             // Create a record in AcademicInfo
-            $academicInfo = new AcademicInfoController();
+            $academicInfo = new InformacionAcademicaController();
             $academicInfo->store(new Request($validated));
 
             // Create a record in CriminalHistory
-            $criminalHistory = new CriminalHistoryController();
+            $criminalHistory = new HistorialCriminalController();
             $criminalHistory->store(new Request($validated));
 
             // Create records in PositionAspire
-            $positionAspire = new PositionAspireController();
+            $positionAspire = new PosicionAspiranteController();
             foreach ($validated['nombre_posiciones'] as $positionName) {
                 $positionAspire->store(new Request([
                     'user_id' => $validated['user_id'],
@@ -101,7 +101,7 @@ class MasterRegistrationController extends Controller
             }
 
             // Create records in SentenceUser
-            $sentenceUser = new SentenceUserController();
+            $sentenceUser = new SentenciaUsuarioController();
             if (isset($validated['usuario_sentencia'])) {
                 foreach ($validated['usuario_sentencia'] as $sentence) {
                     $sentenceUser->store(new Request([

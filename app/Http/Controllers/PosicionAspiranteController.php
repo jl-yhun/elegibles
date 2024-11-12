@@ -2,17 +2,17 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\PositionAspire;
+use App\Models\PosicionAspirante;
 use Illuminate\Http\Request;
 
-class PositionAspireController extends Controller
+class PosicionAspiranteController extends Controller
 {
     /**
      * Muestra una lista del recurso.
      */
     public function index()
     {
-        $positions = PositionAspire::all();
+        $positions = PosicionAspirante::all();
         return response()->json($positions);
     }
 
@@ -26,7 +26,7 @@ class PositionAspireController extends Controller
             'nombre' => 'requerido|cadena|max:20',
         ]);
 
-        $positionAspire = PositionAspire::create($validated);
+        $positionAspire = PosicionAspirante::create($validated);
         return response()->json($positionAspire, 201);
     }
 
@@ -35,7 +35,7 @@ class PositionAspireController extends Controller
      */
     public function show($id)
     {
-        $positionAspire = PositionAspire::findOrFail($id);
+        $positionAspire = PosicionAspirante::findOrFail($id);
         return response()->json($positionAspire);
     }
 
@@ -44,7 +44,7 @@ class PositionAspireController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $positionAspire = PositionAspire::findOrFail($id);
+        $positionAspire = PosicionAspirante::findOrFail($id);
 
         $validated = $request->validate([
             'user_id' => 'requerido|exists:users,id',
@@ -60,7 +60,7 @@ class PositionAspireController extends Controller
      */
     public function destroy($id)
     {
-        $positionAspire = PositionAspire::findOrFail($id);
+        $positionAspire = PosicionAspirante::findOrFail($id);
         $positionAspire->delete();
         return response()->json(['mensaje' => 'Registro eliminado exitosamente']);
     }

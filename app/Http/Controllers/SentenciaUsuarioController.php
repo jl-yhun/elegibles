@@ -2,17 +2,17 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\SentenceUser;
+use App\Models\SentenciaUsuario;
 use Illuminate\Http\Request;
 
-class SentenceUserController extends Controller
+class SentenciaUsuarioController extends Controller
 {
     /**
      * Muestra una lista del recurso.
      */
     public function index()
     {
-        $sentenceUsers = SentenceUser::all();
+        $sentenceUsers = SentenciaUsuario::all();
         return response()->json($sentenceUsers);
     }
 
@@ -26,7 +26,7 @@ class SentenceUserController extends Controller
             'sentencia' => 'requerido|cadena',
         ]);
 
-        $sentenceUser = SentenceUser::create($validated);
+        $sentenceUser = SentenciaUsuario::create($validated);
         return response()->json($sentenceUser, 201);
     }
 
@@ -35,7 +35,7 @@ class SentenceUserController extends Controller
      */
     public function show($id)
     {
-        $sentenceUser = SentenceUser::findOrFail($id);
+        $sentenceUser = SentenciaUsuario::findOrFail($id);
         return response()->json($sentenceUser);
     }
 
@@ -44,7 +44,7 @@ class SentenceUserController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $sentenceUser = SentenceUser::findOrFail($id);
+        $sentenceUser = SentenciaUsuario::findOrFail($id);
 
         $validated = $request->validate([
             'user_id' => 'requerido|exists:users,id',
@@ -60,7 +60,7 @@ class SentenceUserController extends Controller
      */
     public function destroy($id)
     {
-        $sentenceUser = SentenceUser::findOrFail($id);
+        $sentenceUser = SentenciaUsuario::findOrFail($id);
         $sentenceUser->delete();
         return response()->json(['mensaje' => 'Registro eliminado exitosamente']);
     }

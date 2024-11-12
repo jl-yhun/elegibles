@@ -2,17 +2,17 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\GeneralInfo;
+use App\Models\InformacionGeneral;
 use Illuminate\Http\Request;
 
-class GeneralInfoController extends Controller
+class InformacionGeneralController extends Controller
 {
     /**
      * Muestra una lista del recurso.
      */
     public function index()
     {
-        $generalInfos = GeneralInfo::all();
+        $generalInfos = InformacionGeneral::all();
         return response()->json($generalInfos);
     }
 
@@ -35,7 +35,7 @@ class GeneralInfoController extends Controller
             'dni' => 'requerido|cadena|max:15',
         ]);
 
-        $generalInfo = GeneralInfo::create($validated);
+        $generalInfo = InformacionGeneral::create($validated);
         return response()->json($generalInfo, 201);
     }
 
@@ -44,7 +44,7 @@ class GeneralInfoController extends Controller
      */
     public function show($id)
     {
-        $generalInfo = GeneralInfo::findOrFail($id);
+        $generalInfo = InformacionGeneral::findOrFail($id);
         return response()->json($generalInfo);
     }
 
@@ -53,7 +53,7 @@ class GeneralInfoController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $generalInfo = GeneralInfo::findOrFail($id);
+        $generalInfo = InformacionGeneral::findOrFail($id);
 
         $validated = $request->validate([
             'user_id' => 'requerido|exists:users,id',
@@ -78,7 +78,7 @@ class GeneralInfoController extends Controller
      */
     public function destroy($id)
     {
-        $generalInfo = GeneralInfo::findOrFail($id);
+        $generalInfo = InformacionGeneral::findOrFail($id);
         $generalInfo->delete();
         return response()->json(['mensaje' => 'Registro eliminado exitosamente']);
     }

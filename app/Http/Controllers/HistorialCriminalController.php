@@ -2,17 +2,17 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\CriminalHistory;
+use App\Models\HistorialCriminal;
 use Illuminate\Http\Request;
 
-class CriminalHistoryController extends Controller
+class HistorialCriminalController extends Controller
 {
     /**
      * Muestra una lista del recurso.
      */
     public function index()
     {
-        $criminalHistories = CriminalHistory::all();
+        $criminalHistories = HistorialCriminal::all();
         return response()->json($criminalHistories);
     }
 
@@ -32,7 +32,7 @@ class CriminalHistoryController extends Controller
             'sentencia_final' => 'requerido|booleano',
         ]);
 
-        $criminalHistory = CriminalHistory::create($validated);
+        $criminalHistory = HistorialCriminal::create($validated);
         return response()->json($criminalHistory, 201);
     }
 
@@ -41,7 +41,7 @@ class CriminalHistoryController extends Controller
      */
     public function show($id)
     {
-        $criminalHistory = CriminalHistory::findOrFail($id);
+        $criminalHistory = HistorialCriminal::findOrFail($id);
         return response()->json($criminalHistory);
     }
 
@@ -50,7 +50,7 @@ class CriminalHistoryController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $criminalHistory = CriminalHistory::findOrFail($id);
+        $criminalHistory = HistorialCriminal::findOrFail($id);
 
         $validated = $request->validate([
             'user_id' => 'requerido|exists:users,id',
@@ -72,7 +72,7 @@ class CriminalHistoryController extends Controller
      */
     public function destroy($id)
     {
-        $criminalHistory = CriminalHistory::findOrFail($id);
+        $criminalHistory = HistorialCriminal::findOrFail($id);
         $criminalHistory->delete();
         return response()->json(['mensaje' => 'Registro eliminado exitosamente']);
     }

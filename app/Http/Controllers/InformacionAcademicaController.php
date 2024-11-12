@@ -2,17 +2,17 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\AcademicInfo;
+use App\Models\InformacionAcademica;
 use Illuminate\Http\Request;
 
-class AcademicInfoController extends Controller
+class InformacionAcademicaController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $academicInfos = AcademicInfo::all();
+        $academicInfos = InformacionAcademica::all();
         return response()->json($academicInfos);
     }
 
@@ -32,7 +32,7 @@ class AcademicInfoController extends Controller
             'promedio_posicion' => 'nullable|string|max:100', // 'average_position' -> 'promedio_posicion'
         ]);
 
-        $academicInfo = AcademicInfo::create($validated);
+        $academicInfo = InformacionAcademica::create($validated);
         return response()->json($academicInfo, 201);
     }
 
@@ -41,7 +41,7 @@ class AcademicInfoController extends Controller
      */
     public function show($id)
     {
-        $academicInfo = AcademicInfo::findOrFail($id);
+        $academicInfo = InformacionAcademica::findOrFail($id);
         return response()->json($academicInfo);
     }
 
@@ -50,7 +50,7 @@ class AcademicInfoController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $academicInfo = AcademicInfo::findOrFail($id);
+        $academicInfo = InformacionAcademica::findOrFail($id);
 
         $validated = $request->validate([
             'user_id' => 'required|exists:users,id', // 'user_id' -> 'user_id'
@@ -72,7 +72,7 @@ class AcademicInfoController extends Controller
      */
     public function destroy($id)
     {
-        $academicInfo = AcademicInfo::findOrFail($id);
+        $academicInfo = InformacionAcademica::findOrFail($id);
         $academicInfo->delete();
         return response()->json(['message' => 'Record deleted successfully']);
     }

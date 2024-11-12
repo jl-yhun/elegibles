@@ -42,9 +42,10 @@
             <x-input-error :messages="$errors->get('email_confirmation')" class="mt-2" />
 
             <div class="flex items-center justify-center mt-4">
-                <x-primary-button class="px-10 py-4 text-lg">
+                <x-primary-button class="px-10 py-4 text-lg btn-pink">
                     {{ __('Continuar') }}
                 </x-primary-button>
+
             </div>
         </div>
 {{--        Error message--}}

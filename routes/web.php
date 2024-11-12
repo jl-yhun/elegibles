@@ -1,14 +1,14 @@
 <?php
 
-use App\Http\Controllers\AcademicInfoController;
+use App\Http\Controllers\InformacionAcademicaController;
 use App\Http\Controllers\Auth\RegisteredUserController;
-use App\Http\Controllers\CriminalHistoryController;
-use App\Http\Controllers\GeneralInfoController;
+use App\Http\Controllers\HistorialCriminalController;
+use App\Http\Controllers\InformacionGeneralController;
 use App\Http\Controllers\MasterRegistrationController;
-use App\Http\Controllers\PositionAspireController;
+use App\Http\Controllers\PosicionAspiranteController;
 use App\Http\Controllers\ProfileController;
-use App\Http\Controllers\ResidentialInfoController;
-use App\Http\Controllers\SentenceUserController;
+use App\Http\Controllers\InformacionResidencialController;
+use App\Http\Controllers\SentenciaUsuarioController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -27,13 +27,13 @@ Route::middleware(['auth'])->group(function () {
         return view('index');
     })->name('formulario');
 
-    Route::post('/add-general-info', [GeneralInfoController::class, 'store']);
-    Route::resource('residential_infos', ResidentialInfoController::class);
-    Route::resource('academic_infos', AcademicInfoController::class);
-    Route::resource('criminal_histories', CriminalHistoryController::class);
-    Route::resource('position_aspires', PositionAspireController::class);
+    Route::post('/add-general-info', [InformacionGeneralController::class, 'store']);
+    Route::resource('residential_infos', InformacionResidencialController::class);
+    Route::resource('academic_infos', InformacionAcademicaController::class);
+    Route::resource('criminal_histories', HistorialCriminalController::class);
+    Route::resource('position_aspires', PosicionAspiranteController::class);
     Route::post('/wizard/save', [MasterRegistrationController::class, 'store'])->name('wizard.save');
-    Route::resource('sentence_users', SentenceUserController::class);
+    Route::resource('sentence_users', SentenciaUsuarioController::class);
 
 });
 
